@@ -3,7 +3,7 @@ import numpy as np
 import joblib
 import os
 import math
-import tensorflow as tf
+import tf_keras as keras_module
 
 # ── Page config ────────────────────────────────────────────────────────────
 st.set_page_config(
@@ -249,7 +249,7 @@ def load_assets():
     model, scaler = None, None
 
     if os.path.exists(model_path):
-        model = tf.keras.models.load_model(model_path)
+        model = keras_module.models.load_model(model_path)
 
     if os.path.exists(scaler_path):
         scaler = joblib.load(scaler_path)
